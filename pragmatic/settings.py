@@ -21,20 +21,22 @@ env = environ.Env(
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
+# print(BASE_DIR)
 # reading .env file
 environ.Env.read_env(
-    env_file=os.path.join(BASE_DIR, '.env')
+    # env_file=os.path.join(BASE_DIR, '.env')
 )
 
+# False if not in os.environ
 DEBUG = env('DEBUG')
-# SECRET_KEY = env('SECRET_KEY')
+# print(DEBUG)
+SECRET_KEY = env('SECRET_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@tzf)6zde)2k%$99hm2jm+^*mr#r3+_z$y^b)o_twya1m5)na4'
+# SECRET_KEY = 'django-insecure-@tzf)6zde)2k%$99hm2jm+^*mr#r3+_z$y^b)o_twya1m5)na4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -69,7 +71,7 @@ ROOT_URLCONF = 'pragmatic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
