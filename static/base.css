@@ -1,4 +1,11 @@
-.pragmatic_footer_logo{
+.pragmatic_title{
     font-family: 'Anton', sans-serif;
 }
 
+.pragmatic_footer_button{
+    text-align:center; font-size: .6em;
+}
+
+.pragmatic_logo{
+    text-align:center; margin-top: 2rem;
+}
