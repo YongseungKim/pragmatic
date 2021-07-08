@@ -5,5 +5,15 @@
         <h1>
             testing
         </h1>
+        <form action="/account/hello_world" method="post">
+            <!--  bootstrap 에 들어있는 button class-->
+            <!-- 항상 적어줘야함 -->
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="POST">
+        </form>
+        <h1>
+<!-- POST 로  데이터가 들어오면       -->
+            {{ text }}
+        </h1>
     </div>
 {% endblock %}
