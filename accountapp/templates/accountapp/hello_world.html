@@ -18,12 +18,14 @@
 <!--        <h1>-->
 <!--            {{ hello_world_output.text }}-->
 <!--        </h1>-->
-        {% if hello_world_output %}
-        <h1>
-<!-- POST 로  데이터가 들어오면       -->
-<!--            {{ text }}-->
-            {{ hello_world_output.text }}
-        </h1>
+        {% if hello_world_list %}
+        {%  for hello_world in hello_world_list %}
+            <h1>
+    <!-- POST 로  데이터가 들어오면       -->
+    <!--            {{ text }}-->
+                {{ hello_world.text }}
+            </h1>
+        {% endfor %}
 <!--        {% else %}-->
 <!--            {{ hello_world_output.text }}-->
         {% endif %}
